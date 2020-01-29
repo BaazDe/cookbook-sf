@@ -1,0 +1,31 @@
+.sign-form{
+  height: 45vh;
+  width: 40vw;
+  background-color: rgba(224, 245, 245, 0.95);
+  border-radius: 20px 10px;
+
+  .top-nav-form{
+    display: flex;
+    justify-content: space-between;
+    margin: 1.2em;
+
+    img {
+      cursor: pointer;
+    }
+
+    div{
+      display: flex;
+      font-size: 1.5em;
+      color: #223131;
+      align-items: center;
+
+      a{
+        margin: 0 0.3em;
+        color: #223131;
+        &:hover, &:focus {
+          border-bottom: 2px solid #C38A8A;
+        }
+      }
+    }
+  }
+}

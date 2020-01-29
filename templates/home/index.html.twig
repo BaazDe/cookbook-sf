@@ -1,20 +1,80 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}CookBook{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<header>
+    <div class="logo"><img src="{{ asset('build/images/LOGO.svg') }}" alt=""></div>
+    <div class="sign-buttons">
+        {% if app.user %}
+        <button type="button" class="sign-button">PROFIL</button>
+        <button type="button" class="sign-button">LOG OUT</button>
+        {% else %}
+        <button type="button" class="sign-button">SIGN IN</button>
+        <button type="button" class="sign-button">SIGN UP</button>
+        {% endif %}
+    </div>
+</header>
+<nav>
+    <div>
+        <img src="{{ asset('build/images/icons/search.svg') }}" alt="">
+        <button type="button">Author</button>
+        <button type="button">Recipe</button>
+        <button type="button">Ingredient</button>
+        <button type="button">Top</button>
+    </div>
+</nav>
+<main>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <div class="sign-form">
+        <div class="top-nav-form">
+            <div>
+                <a href="#">SIGN IN</a>
+                |
+                 <a href="#">SIGN UP</a>
+            </div>
 
-    This friendly message is coming from:
+            <img src="{{ asset('build/images/icons/cross.svg') }}" alt="">
+        </div>
+
+    </div>
+
+    <section class="main-section">
+        <ul>
+            <li>CREATE</li>
+            <li>DISCOVER</li>
+            <li>SHARE</li>
+        </ul>
+        <article>
+            <p>Sed velit augue, tempor quis euismod id, lobortis eu urna. Nunc suscipit sodales eleifend. Vivamus ac mi commodo, cursus turpis in, tempor sapien.</p>
+            <p>Cras mollis justo mi, et pretium risus elementum id. Aliquam eros metus, eleifend nec euismod id, dignissim eget urna. </p>
+        </article>
+    </section>
+
+    <section class="new-recipes">
+        <div class="show-recipe-card">
+            <img src="{{ asset('build/images/recipe-photos/Baked-Sweet-Potatoes-5.jpg') }}" alt="">
+            <div class="infos-recipe">
+                <h3>Baked Sweet Potatoes</h3>
+                <p>Mauris et vestibulum magna, ut rhoncus lacus.</p>
+            </div>
+        </div>
+        <div class="show-recipe-card">
+            <img src="{{ asset('build/images/recipe-photos/Garlic-Butter-Baked-Salmon.jpg') }}" alt="">
+        </div>
+        <div class="show-recipe-card">
+            <img src="{{ asset('build/images/recipe-photos/lasagna.jpg') }}" alt="">
+        </div>
+    </section>
+
+</main>
+
+<footer>
     <ul>
-        <li>Your controller at <code><a href="{{ '/home/wilder/CH4/cookbook-sf/cookbook-sf/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/wilder/CH4/cookbook-sf/cookbook-sf/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Legal</a></li>
+        <li><a href="#">About Us</a></li>
     </ul>
-</div>
+</footer>
+
 {% endblock %}
