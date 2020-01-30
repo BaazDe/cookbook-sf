@@ -1,0 +1,13 @@
+<div class="add-item-form">
+    <div class="top-nav-form">
+        <div>
+            <a href="{{ path('book_new') }}">NEW BOOK</a>
+        </div>
+        <img src="{{ asset('build/images/icons/cross.svg') }}" alt="closing button" onclick="window.location.href='{{ path('book_index') }}'">
+    </div>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+    {{ form_end(form) }}
+</div>
+

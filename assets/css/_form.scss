@@ -1,30 +1,88 @@
+@import "vars";
+
+#js-form-up, #js-form-in{
+  position: fixed;
+  z-index: 99;
+
+}
+
 .sign-form{
   height: 45vh;
   width: 40vw;
   background-color: rgba(224, 245, 245, 0.95);
   border-radius: 20px 10px;
 
-  .top-nav-form{
+  form{
     display: flex;
-    justify-content: space-between;
-    margin: 1.2em;
+    height: 75%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background: rgba(195, 166, 138, 0.9);
+    border-radius: 10px;
+    width: 80%;
+    margin: 0 auto;
 
-    img {
-      cursor: pointer;
+    button.btn{
+      background: #CAEBEB;
+      border-radius: 10px 5px;
+      width: 50%;
+      height: 10%;
+      min-height: 40px;
+      color: #223131;
+      font-size: 160%;
+      font-family: $montserrat;
     }
 
-    div{
-      display: flex;
-      font-size: 1.5em;
-      color: #223131;
-      align-items: center;
+    input{
+      background: $input-color;
+      border-radius: 10px 5px;
+      height: 30px;
+      border: none;
 
-      a{
-        margin: 0 0.3em;
-        color: #223131;
-        &:hover, &:focus {
-          border-bottom: 2px solid #C38A8A;
-        }
+      &::placeholder{
+        color: $auth-button-color;
+        font-size: 20px;
+        line-height: 24px;
+        font-family: $montserrat;
+        margin-left: 1em;
+
+      }
+    }
+  }
+}
+
+.add-item-form{
+  height: 35vh;
+  width: 30vw;
+  background-color: rgba(224, 245, 245, 0.95);
+  border-radius: 20px 10px;
+
+  a{
+    border-bottom: 2px solid #C38A8A;
+  }
+}
+
+.top-nav-form{
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 1.5em;
+
+  img {
+    cursor: pointer;
+  }
+
+  div{
+    display: flex;
+    font-size: 1.5em;
+    color: #223131;
+    align-items: center;
+
+    a{
+      margin: 0 0.3em;
+      color: #223131;
+      &:hover, &:focus {
+        border-bottom: 2px solid #C38A8A;
       }
     }
   }

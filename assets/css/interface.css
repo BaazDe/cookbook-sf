@@ -375,157 +375,26 @@ template {
       .top-nav-form div a:hover, .top-nav-form div a:focus {
         border-bottom: 2px solid #C38A8A; }
 
-body {
+section.interface {
+  border-radius: 5px;
   display: flex;
-  flex-direction: column;
-  justify-content: center; }
-  body header {
+  flex-wrap: wrap;
+  height: 550px;
+  width: 90%;
+  background-color: rgba(195, 166, 138, 0.29);
+  justify-content: space-evenly;
+  align-items: center;
+  overflow-y: auto; }
+  section.interface div.item {
+    border: 1px solid #65AAAA;
+    border-radius: 20px 10px;
+    width: 185px;
+    height: 200px;
+    margin: 2em; }
+  section.interface div.add-item {
+    cursor: pointer;
     display: flex;
-    justify-content: space-between;
-    padding: 1vh 2em; }
-    body header .logo {
-      height: 100%;
-      width: 25%; }
-      body header .logo img {
-        width: 80%;
-        height: 90%;
-        min-width: 150px; }
-    body header .sign-buttons {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      width: 20%;
-      align-items: center;
-      justify-content: space-evenly; }
-      body header .sign-buttons .sign-button {
-        font-size: 20px;
-        font-family: "Quicksand", sans-serif;
-        background-color: #65AAAA;
-        border-radius: 10px 5px;
-        width: 80%;
-        color: #E0F5F5;
-        min-width: 90px;
-        height: 32px;
-        margin: 0.3em 0; }
-        body header .sign-buttons .sign-button:hover {
-          background-color: #8AC3C3;
-          cursor: pointer; }
-  body nav {
-    margin: 1em 0;
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-    body nav div {
-      width: 80%;
-      display: flex;
-      align-items: center;
-      justify-content: space-evenly; }
-      body nav div img {
-        height: 50px; }
-      body nav div button {
-        font-size: 20px;
-        font-family: "Quicksand", sans-serif;
-        background-color: #C38A8A;
-        width: 20%;
-        border-radius: 10px 5px;
-        color: #E0F5F5;
-        min-width: 90px;
-        height: 32px; }
-        body nav div button:hover {
-          background-color: #A67474;
-          cursor: pointer;
-          font-weight: 500; }
-  body main {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 3%; }
-    body main section {
-      margin: 1em 0; }
-    body main .main-section {
-      border-radius: 5px;
-      display: flex;
-      height: 60vh;
-      width: 90%;
-      background-color: rgba(195, 166, 138, 0.29);
-      justify-content: space-evenly;
-      align-items: center; }
-      body main .main-section ul {
-        border: 1px solid #65AAAA;
-        border-radius: 10px 5px;
-        width: 30%;
-        height: 80%; }
-        body main .main-section ul li {
-          font-size: 30px;
-          font-family: "Quicksand", sans-serif;
-          color: #65AAAA;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          list-style: none;
-          height: calc(100%/3);
-          border-radius: 9px 4px; }
-          body main .main-section ul li:hover, body main .main-section ul li:focus {
-            background-color: #C38A8A;
-            cursor: pointer;
-            color: #E0F5F5; }
-      body main .main-section article {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        width: 60%;
-        height: 70%;
-        padding: 0 1em; }
-        body main .main-section article p {
-          color: #223131;
-          font-family: "Montserrat", sans-serif;
-          font-size: 1.3rem; }
-    body main section.new-recipes {
-      height: 40vh;
-      display: flex;
-      width: 90%;
-      justify-content: space-around; }
-      body main section.new-recipes div.show-recipe-card {
-        height: 95%;
-        width: 20%;
-        cursor: pointer; }
-        body main section.new-recipes div.show-recipe-card .infos-recipe {
-          background-color: rgba(195, 166, 138, 0.9);
-          height: 50%;
-          border-radius: 0 0 20px 10px;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-evenly;
-          align-items: center;
-          position: relative;
-          top: -51%;
-          width: 100%; }
-          body main section.new-recipes div.show-recipe-card .infos-recipe p, body main section.new-recipes div.show-recipe-card .infos-recipe h3 {
-            text-align: center;
-            color: #223131;
-            font-family: "Montserrat", sans-serif; }
-          body main section.new-recipes div.show-recipe-card .infos-recipe h3 {
-            font-weight: 500;
-            font-family: "Quicksand", sans-serif; }
-        body main section.new-recipes div.show-recipe-card img {
-          position: sticky;
-          border-radius: 20px 10px;
-          height: 100%;
-          width: 100%;
-          border: 1px solid #65AAAA; }
-  body footer {
-    background-color: #65AAAA;
-    padding: 0.5em 0;
-    margin-top: 2.7em; }
-    body footer ul {
-      margin-left: 1em; }
-      body footer ul li {
-        list-style: none; }
-        body footer ul li a {
-          text-decoration: none;
-          font-family: "Quicksand", sans-serif;
-          font-size: 1.7em;
-          color: #E0F5F5; }
+    justify-content: center;
+    align-items: center; }
 
-/*# sourceMappingURL=base.css.map */
+/*# sourceMappingURL=interface.css.map */

@@ -1,0 +1,19 @@
+        {% block signForm %}
+        <div class="sign-form">
+            <div class="top-nav-form">
+                <div>
+                    <a href="#js-sign-in">SIGN IN</a>
+                    |
+                    <a href="#js-sign-up">SIGN UP</a>
+                </div>
+                <img src="{{ asset('build/images/icons/cross.svg') }}" alt="closing button" id="js-close-sign-up">
+            </div>
+            {{ form_start(registrationForm) }}
+            {{ form_row(registrationForm.username) }}
+            {{ form_row(registrationForm.email) }}
+            {{ form_row(registrationForm.plainPassword) }}
+{#            {{ form_row(registrationForm.agreeTerms) }}#}
+            <button class="btn">SIGN UP</button>
+            {{ form_end(registrationForm) }}
+        </div>
+        {% endblock signForm %}
