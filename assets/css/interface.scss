@@ -1,0 +1,29 @@
+@import "global";
+@import "form";
+
+section.interface {
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  height: 550px;
+  width: 90%;
+  background-color: $section-interface-color;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow-y: auto;
+
+  div.item {
+    border: 1px solid $auth-button-color;
+    border-radius: 20px 10px;
+    width: 185px;
+    height: 200px;
+    margin: 2em;
+  }
+
+  div.add-item {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

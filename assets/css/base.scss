@@ -8,7 +8,6 @@ body{
 
   header{
     display: flex;
-    height: 12vh;
     justify-content: space-between;
     padding: 1vh 2em;
 
@@ -39,6 +38,8 @@ body{
         width: 80%;
         color: $light-font-color;
         min-width: 90px;
+        height: 32px;
+        margin: 0.3em 0;
 
         &:hover{
           background-color: $auth-hover-color;
@@ -73,6 +74,7 @@ body{
         border-radius: 10px 5px;
         color: $light-font-color;
         min-width: 90px;
+        height: 32px;
 
         &:hover{
           background-color: $search-button-color-hover;
@@ -84,6 +86,7 @@ body{
   }
 
   main{
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -98,7 +101,7 @@ body{
       display: flex;
       height: 60vh;
       width: 90%;
-      background-color: $section-color;
+      background-color: $section-interface-color;
       justify-content: space-evenly;
       align-items: center;
       ul{

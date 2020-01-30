@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
@@ -8,7 +8,44 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+            <header>
+                <div class="logo"><img src="{{ asset('build/images/LOGO.svg') }}" alt="logo cookbook"></div>
+                <div class="sign-buttons">
+                    {% if app.user %}
+                        <button type="button" class="sign-button">MY BOOK</button>
+                        <button type="button" class="sign-button" onclick="window.location.href='{{ path('app_logout') }}'">LOG OUT</button>
+                    {% else %}
+                        <button type="button" class="sign-button" id="js-sign-in">SIGN IN</button>
+                        <button type="button" class="sign-button" id="js-sign-up">SIGN UP</button>
+                    {% endif %}
+                </div>
+            </header>
+            <nav>
+                <div>
+                    <img src="{{ asset('build/images/icons/search.svg') }}" alt="search icon">
+                    <button type="button">Author</button>
+                    <button type="button">Recipe</button>
+                    <button type="button">Ingredient</button>
+                    <button type="button">Top</button>
+                </div>
+            </nav>
+            <main>
+                {% block interface %}
+                {% endblock interface %}
+                {% block main %}
+                {% endblock main %}
+            </main>
+
+            <footer>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Legal</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </footer>
+
+        {% endblock %}
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}

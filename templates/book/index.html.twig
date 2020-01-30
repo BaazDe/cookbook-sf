@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CookBook | My Book{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('interface') }}
+{% endblock %}
+
+{% block interface %}
+    <section class="interface">
+        {% block addForm %}
+        {% endblock addForm %}
+        {% include 'book/_book.html.twig' %}
+    </section>
+{% endblock interface %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('interface') }}
+{% endblock %}
