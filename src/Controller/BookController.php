@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Book;
 use App\Form\BookType;
 use App\Repository\BookRepository;
+use App\Repository\RecipeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -111,5 +112,18 @@ class BookController extends AbstractController
         }
 
         return $this->redirectToRoute('book_index');
+    }
+
+    /**
+     * @param RecipeRepository $repository
+     * @param Book $book
+     * @return Response
+     * @Route("/{id}/recipes", name="book_recipes")
+     */
+    public function recipesFromBook(RecipeRepository $repository, Book $book): Response
+    {
+        return $this->render('recipe/recipes.html.twig', [
+            'recipes' => $repository->findBy(['book'=> $book])
+        ]);
     }
 }

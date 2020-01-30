@@ -1,0 +1,14 @@
+<div class="add-item" id="add-item">
+    <img src="{{ asset('build/images/icons/plus.svg') }}" alt="">
+</div>
+
+{% for recipe in recipes %}
+    <div class="item">
+       {# {% include 'recipe/_delete_form.html.twig' %}#}
+
+        <img class="item-img" src="{{ asset('uploads/books/') }}{{ recipe.mainImage }}"  alt="{{ recipe.mainImage }}"/>
+        <div class="infos-recipe">
+            <h3>{{ recipe.title }}</h3>
+        </div>
+    </div>
+{% endfor %}

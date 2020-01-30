@@ -3,7 +3,7 @@
 </div>
 
 {% for book in books %}
-<div class="item">
+<div class="item" onclick="window.location.href='{{ path('book_recipes', {'id': book.id}) }}'">
     {% include 'book/_delete_form.html.twig' %}
 
     <img class="item-img" src="{{ asset('uploads/books/') }}{{ book.image }}"  alt="{{ book.title }}"/>
