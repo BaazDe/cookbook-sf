@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CookBook{% endblock %}
+
+{% block body %}
+<header>
+    <div class="logo"><img src="{{ asset('build/images/LOGO.svg') }}" alt=""></div>
+    <div class="sign-buttons">
+        {% if app.user %}
+        <button type="button" class="sign-button">PROFIL</button>
+        <button type="button" class="sign-button">LOG OUT</button>
+        {% else %}
+        <button type="button" class="sign-button">SIGN IN</button>
+        <button type="button" class="sign-button">SIGN UP</button>
+        {% endif %}
+    </div>
+</header>
+<nav>
+    <div>
+        <img src="{{ asset('build/images/icons/search.svg') }}" alt="">
+        <button type="button">Author</button>
+        <button type="button">Recipe</button>
+        <button type="button">Ingredient</button>
+        <button type="button">Top</button>
+    </div>
+</nav>
+<main>
+
+    <div class="sign-form">
+        <div class="top-nav-form">
+            <div>
+                <a href="#">SIGN IN</a>
+                |
+                 <a href="#">SIGN UP</a>
+            </div>
+
+            <img src="{{ asset('build/images/icons/cross.svg') }}" alt="">
+        </div>
+
+    </div>
+
+    <section class="main-section">
+        <ul>
+            <li>CREATE</li>
+            <li>DISCOVER</li>
+            <li>SHARE</li>
+        </ul>
+        <article>
+            <p>Sed velit augue, tempor quis euismod id, lobortis eu urna. Nunc suscipit sodales eleifend. Vivamus ac mi commodo, cursus turpis in, tempor sapien.</p>
+            <p>Cras mollis justo mi, et pretium risus elementum id. Aliquam eros metus, eleifend nec euismod id, dignissim eget urna. </p>
+        </article>
+    </section>
+
+    <section class="new-recipes">
+        <div class="show-recipe-card">
+            <img src="{{ asset('build/images/recipe-photos/Baked-Sweet-Potatoes-5.jpg') }}" alt="">
+            <div class="infos-recipe">
+                <h3>Baked Sweet Potatoes</h3>
+                <p>Mauris et vestibulum magna, ut rhoncus lacus.</p>
+            </div>
+        </div>
+        <div class="show-recipe-card">
+            <img src="{{ asset('build/images/recipe-photos/Garlic-Butter-Baked-Salmon.jpg') }}" alt="">
+        </div>
+        <div class="show-recipe-card">
+            <img src="{{ asset('build/images/recipe-photos/lasagna.jpg') }}" alt="">
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <ul>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Legal</a></li>
+        <li><a href="#">About Us</a></li>
+    </ul>
+</footer>
+
+{% endblock %}
