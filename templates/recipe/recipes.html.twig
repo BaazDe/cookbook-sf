@@ -11,8 +11,13 @@
     <section class="interface">
         {% block addForm %}
             <div id="js-form-add" class="closed">
-                {# {{ render(controller(
-                    'App\\Controller\\BookController::new')) }} #}
+                <form action="">
+                    <input type="text">
+                    <input type="file">
+                    <input type="number">
+                    <input type="number">
+                    <button type="submit">Create Recipe</button>
+                </form>
             </div>
         {% endblock addForm %}
         {% include 'recipe/_recipe.html.twig' %}
