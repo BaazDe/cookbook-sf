@@ -28,14 +28,19 @@ class BookController extends AbstractController
     /**
      * @Route("/new", name="book_new", methods={"GET","POST"})
      */
-    public function new(Request $request, BookRepository $bookRepository): Response
+    public function new(Request $request): Response
     {
         $book = new Book();
-        $form = $this->createForm(BookType::class, $book);
+        $form = $this->createForm(BookType::class, $book,
+            [
+                'action' => $this->generateUrl('book_new'),
+                'method' => 'POST',
+            ]);
         $form->handleRequest($request);
         $user = $this->getUser();
 
         if ($form->isSubmitted() && $form->isValid()) {
+
 
             $image =$form['image']->getData();
 
@@ -43,12 +48,14 @@ class BookController extends AbstractController
                 $imageName = md5(uniqid()). '.'.$image->guessExtension();
                 // Move the file to the directory where brochures are stored
                 $image->move($this->getParameter('upload_directory_book'), $imageName);
+
+            } else {
+                $imageName = "transparent.png";
             }
 
             $entityManager = $this->getDoctrine()->getManager();
-            $book
-                ->setImage($imageName)
-                ->setUser($user);
+            $book->setImage($imageName);
+            $book->setUser($user);
 
             $entityManager->persist($book);
             $entityManager->flush();
@@ -59,7 +66,6 @@ class BookController extends AbstractController
         return $this->render('book/new.html.twig', [
             'book' => $book,
             'form' => $form->createView(),
-            'books' => $bookRepository->findBy(['user'=>$this->getUser()]),
         ]);
     }
 

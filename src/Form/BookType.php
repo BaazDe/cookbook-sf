@@ -19,14 +19,14 @@ class BookType extends AbstractType
             ->add('title', TextType::class, [
                 'label' => false,
                 'attr' => [
-                    'placeholder' => 'Book title'
+                    'placeholder' => '  Book title'
                 ]
             ])
             ->add('image', FileType::class, [
                 'required' => false,
                 'label'=> false,
                 'attr' => [
-                    'placeholder' => 'Book image'
+                    'placeholder' => '  Book image'
                 ]
             ])
         ;
