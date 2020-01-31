@@ -9,13 +9,16 @@
 
 {% block interface %}
     <section class="interface">
+        {% if app.user %}
         {% block addForm %}
             <div id="js-form-add" class="closed">
                 {{ render(controller(
                     'App\\Controller\\BookController::new')) }}
             </div>
         {% endblock addForm %}
+
         {% include 'book/_book.html.twig' %}
+        {% endif %}
     </section>
 {% endblock interface %}
 
